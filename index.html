@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retos de la Presentación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div class="bg-decorations">
+        <div class="circle-blur cb-1"></div>
+        <div class="circle-blur cb-2"></div>
+        <div class="circle-blur cb-3"></div>
+    </div>
+
+    <header>
+        <div class="badge-pitch">🎮 Trivia del Público</div>
+        <div class="logo-title">¿Qué tanto <span>prestaste atención?</span></div>
+        <p class="subtitle">Pon a prueba tu memoria sobre lo que acabamos de presentar</p>
+    </header>
+
+    <main class="games-container" id="mainContainer">
+        
+<!-- Tarjeta 1 -->
+        <div class="game-card game-1 float-anim-1" onclick="selectGame(1)">
+            <div class="card-icon-wrapper">
+                <i class="fa-solid fa-border-all"></i>
+            </div>
+            <h2>1. El Business Canvas</h2>
+            <p>Preguntas sobre nuestro modelo de negocio, clientes, canales e ingresos.</p>
+            <span class="play-badge">5 PREGUNTAS</span>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="game-card game-2 float-anim-2" onclick="selectGame(2)">
+            <div class="card-icon-wrapper">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <h2>2. La Aplicación</h2>
+            <p>Pon a prueba lo que recuerdas sobre el funcionamiento y la demo de la app.</p>
+            <span class="play-badge">5 PREGUNTAS</span>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="game-card game-3 float-anim-3" onclick="selectGame(3)">
+            <div class="card-icon-wrapper">
+                <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h2>3. La Propuesta Entera</h2>
+            <p>Evaluación sobre nuestro valor general, visión de futuro y llamados a la acción.</p>
+            <span class="play-badge">5 PREGUNTAS</span>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="gameModal">
+        <div class="modal-card">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            
+            <div class="minigame-header">
+                <span class="minigame-tag" id="gameTag">RETO</span>
+                <span style="font-weight: 800; color: var(--text-secondary);" id="questionTracker">1 de 5</span>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <div id="modalContent">
+                <!-- Contenido dinámico -->
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>
